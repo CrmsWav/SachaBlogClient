@@ -1,30 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
+import Home from './pages/Home'
 
 function App() {
-  const [backendData, setBackendData] = useState([{}])
-
-  useEffect(() => {
-    const sendGetRequest = async () => {
-      try {
-          const resp = await axios.get('http://localhost:5000/api');
-          setBackendData(resp.data)
-      } catch (err) {
-          console.error(err);
-      }
-    };
-    sendGetRequest();
-  }, [])
-
   return (
     <div>
-      {( typeof backendData.users === 'undefined' ) ? (
-        <p>Loading...</p>
-      ) : (
-        backendData.users.map((user, index) => (
-          <p key={index}>{user}</p>
-        ))
-      )}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+
+        <ToastContainer position='top-center' />
+      </Router>
     </div>
   )
 }

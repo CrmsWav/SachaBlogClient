@@ -1,0 +1,24 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 20px;
+    background-color: rgb(224, 131, 222);
+}
+
+.Header img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.Header ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.Header ul li {
+    padding: 0 10px;
+    text-transform: uppercase;
+}
