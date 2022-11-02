@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/Header.css'
+import '../styles/components/Header.css'
 import { Link } from 'react-router-dom'
 
 function Header() {
@@ -8,23 +8,23 @@ function Header() {
       <img src='https://i.imgur.com/3Qq3Y7M.png' alt='logo' />
 
       <ul>
-        <Link to={`/projects/`}>
+        <Link to={`/projects`}>
           <li>My projects</li>
         </Link>
 
-        <Link to={`/about/`}>
+        <Link to={`/about`}>
           <li>About me</li>
         </Link>
 
-        <Link to={`/services/`}>
+        <Link to={`/services`}>
           <li>Services</li>
         </Link>
 
-        <Link to={`/contact/`}>
+        <Link to={`/contact`}>
           <li>Contact</li>
         </Link>
 
-        <Link to={`/shop/`}>
+        <Link to={`/shop`}>
           <li>Market place</li>
         </Link>
       </ul>

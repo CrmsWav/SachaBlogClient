@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import './Home.css'
-import { toast } from 'react-toastify';
+import '../styles/pages/Home.css'
+// import { toast } from 'react-toastify';
 import axios from 'axios'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -30,14 +30,15 @@ function Home() {
 
       <h2>Users :</h2>
 
-      { ( backendData === 'undefined' ) ? 
+      { ( backendData === [] ) ? 
         (<p>Loading...</p>) :
         (backendData.map((user, index) => (
-          <div>
-            <p key={index}>{user.userid}</p>
-            <p key={index}>{user.name}</p>
-            <p key={index}>{user.email}</p>
-            <p key={index}>{user.phone}</p>
+          <div key={index}>
+            <br />
+            <p>{user.userid}</p>
+            <p>{user.name}</p>
+            <p>{user.email}</p>
+            <p>{user.phone}</p>
 
             <div className='buttons'>
               <Link to={`/edit/${user.userid}`}>
@@ -50,6 +51,7 @@ function Home() {
                 <button>View</button>
               </Link>
             </div>
+            <br />
           </div>
         )))
       }
